@@ -1,0 +1,59 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Python virtual environment
+.venv/
+venv/
+env/
+*.pyc
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Build output
+dist/
+build/
+backend/static/
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Vercel
+.vercel
+
+# Logs
+*.log
+npm-debug.log*
+
+# Testing
+coverage/
+
+# Documentation
+docs/
+
+# Tools
+tools/
+
+# Misc
+*.tmp
+*.temp
