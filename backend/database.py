@@ -10,6 +10,10 @@ DATABASE_URL = os.getenv(
     "sqlite:///./edbo_lab.db",
 )
 
+# pg8000 驱动需要显式指定 driver
+if DATABASE_URL.startswith("postgresql://"):
+    DATABASE_URL = DATABASE_URL.replace("postgresql://", "postgresql+pg8000://", 1)
+
 engine = create_engine(DATABASE_URL, echo=False)
 SessionLocal = sessionmaker(bind=engine, autoflush=False, autocommit=False)
 
