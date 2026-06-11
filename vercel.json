@@ -1,14 +1,9 @@
 {
-  "buildCommand": "npm run build",
-  "outputDirectory": "backend/static",
-  "framework": null,
-  "functions": {
-    "api/index.py": {
-      "runtime": "python3.11"
-    }
-  },
-  "rewrites": [
-    { "source": "/api/(.*)", "destination": "/api/index" },
-    { "source": "/(.*)", "destination": "/index.html" }
+  "buildCommand": "npm install && npm run build",
+  "builds": [
+    { "src": "api/index.py", "use": "@vercel/python" }
+  ],
+  "routes": [
+    { "src": "/(.*)", "dest": "api/index.py" }
   ]
 }
