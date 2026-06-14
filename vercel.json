@@ -1,7 +1,16 @@
 {
-    "buildCommand": "npm install && npm run build",
-    "framework": null,
+    "buildCommand": "npm run build",
+    "outputDirectory": "backend/static",
+    "installCommand": "npm install && pip install -r backend/requirements.txt",
+    "functions": {
+      "api/index.py": {
+        "maxDuration": 30,
+        "includeFiles": "backend/**"
+      }
+    },
     "routes": [
-      { "src": "/(.*)", "dest": "/api/index" }
+      { "src": "/api/(.*)", "dest": "/api/index.py" },
+      { "handle": "filesystem" },
+      { "src": "/(.*)", "dest": "/index.html" }
     ]
   }
